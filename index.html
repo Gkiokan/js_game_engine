@@ -3,17 +3,18 @@
 <html>
     <head>
         <title>JS Game Engine | by Gkiokan.NET ALPHA v.0.0.1</title>
-        
+
         <link rel='stylesheet' type='text/css' href='assets/css/gkiokan.net_js_game_engine.css'>
-        
+        <link rel='stylesheet' type='text/css' hreF='assets/css/gkiokan.net_js_game_engine_map.css'>
+
         <meta name="google-site-verification" content="rwKllJzBSSJKRBcX6TueeBrO457GVjR0knT5kF6s5Os" />
-        
-        
+
+
         <script src='assets/js/jquery-1.11.1.min.js'></script>
         <script src='assets/js/gkiokan.net_js_game_engine.js'></script>
     </head>
     <body>
-        
+
         <div class='game'>
             <div class='hud'>
                 <div class='user'>
@@ -21,47 +22,60 @@
                     Level: <span class='level'></span><br>
                     Class: <span class='type'></span><br>
                 </div>
-                
+
                 <div class='player_online'></div>
                 <div class='timer'></div>
             </div>
-            
+
             <div class='map'>
+                <div class='level_settings'>
+                  <div class='level level_0_background'></div>
+                  <div class='air air_0_background'></div>
+                  <div class='town town_0_background'></div>
+                  <div class='floor floor_1_background'></div>
+                </div>
                 <div class='fires'></div>
-                <div class='players'></div>                
+                <div class='players'></div>
             </div>
-            
+
             <div class='modify'>
                 <input type='text' name='new_player_name' style="width:50%" placeholder="new Player Name">
                 <input type='text' name='new_player_type' style="width:30%" placeholder="Type">
                 <input type='text' name='new_player_level' style="width:20%" placeholder="Level">
                 <div id='add_new_player' class='btn btn_add'>Add new Player</div>
-                
+
                 <input type='text' name='fire_count' style='width:30%' placeholder='Fire Count'>
                 <input type='text' name='fps_timer' style='width: 30%' placeholder='FPS timer'>
                 <input type='text' name='fps_count' style='width: 20%' placeholder='FPS count'>
                 <input type='text' name='fps' style='width: 20%' placeholder='FPS Average'>
             </div>
         </div>
-        
+
         <div class='debug'></div>
-        
+
         <div class='update_log'>
             Updates<br>
     <pre>
+    v.0.0.4
+    - First Prototype in Level Design for 2D
+    - Background Set in parallex
+    - Floor Set in parallex
+    - Map Movement with Player coordination
+    - Player movement Object changed to recursive
+
     v.0.0.3
     - FireModel Basics
     - FireModel Actions
     - FireModel first Animation
     - FireModel direction
-        
+
     v.0.0.2
     - easy Keyboard Interrupts handling
     - Keyboard loop in timer
     - game loop resolved
     - Google Analytics added
     - alpha online version.
-        
+
     v.0.0.1
     - Build Core JSGE structure
     - Build Player Model and templates
@@ -71,19 +85,19 @@
     - Colored Debug Messages
     </pre>
         </div>
-        
+
         <script>
             console.log(jsGameEngine.version);
-            
+
             jsGameEngine.init();
             jsGameEngine.player("Gkiokan", "Mage", "20", true, 500, 450);
             jsGameEngine.player("BOT", "Archer", "1", false, 700, 600);
-            
+
             jsGameEngine.start();
-            
+
             jsGameEngine.build_player("Another", "Knight", "5", false, 800, 400);
-            
-            
+
+
             /** Modify Event Listener **/
             $('#add_new_player').on('click', function(){
                 name = $('input[name=new_player_name]').val();
@@ -99,10 +113,10 @@
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
             })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-            
+
             ga('create', 'UA-54771740-3', 'auto');
             ga('send', 'pageview');
-            
-        </script>        
+
+        </script>
     </body>
 </html>

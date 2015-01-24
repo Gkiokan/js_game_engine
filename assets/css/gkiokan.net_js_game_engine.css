@@ -5,20 +5,23 @@
 
 
 html, body {
-    height:100%; max-height: 100%; width:100%; max-width: 100%;    
+    height:100%; max-height: 100%; width:100%; max-width: 100%;
     overflow: hidden; background: #222; color:#fff; font-family: sans-serif; }
-    
+
 * { padding: 0px; margin: 0px; }
 
+.animate { transition:all .3s; -webkit-transition:all .3s; -moz-transition:all .3s; }
+
 /*
- * GAME 
+ * GAME
  */
-.game { position: absolute; top: 0px; left:0px; right: 0px; bottom: 0px; }
+.game { position: fixed; top: 0px; left:0px; right: 0px; bottom: 0px; z-index:10; }
 
 /*
  * HUD
  */
-.game .hud .user { position: absolute; border: 1px solid darkcyan; top: 0px; left: 0px; }
+.game .hud { position:fixed; top:0px; right:0px; left:0px; bottom:0px; z-index:100; }
+.game .hud .user { position: absolute; border: 1px solid darkcyan; top: 0px; left: 0px; z-index:100; }
 .game .hud .player_online { position: absolute; top: 100px; left: 0px; bottom: 0px; border: 1px solid #d35400; width:200px; height: auto; overflow-y: auto; }
 .game .hud .player_online .player_list_element:first-child:before { content: 'Players'; display: block; margin-bottom:8px; font-weight: bold; }
 .game .hud .player_online .player_list_element { display: block; margin-bottom: 3px; }
@@ -41,6 +44,15 @@ html, body {
 .players .player.user { border: 2px solid #87D37C; background: rgba(231, 76, 60, .4); position: absolute; }
 .players .player .name { border: 1px solid cyan; border-radius: 5px; padding: 2px 5px; margin: 0px auto; display: inline-block; }
 
+
+
+/*
+ * MAP Builds
+ */
+.map { height:auto; width:auto; border:10px solid maroon; position:absolute; top:0px; left:0px; right:0px; bottom:0px; overflow:hidden; padding:200px; z-index:50; }
+
+
+
 /*
  *
  */
@@ -50,10 +62,10 @@ html, body {
 /*
  * DEBUG & MODIFY
  */
-.debug { border: 1px solid darkgreen; position: absolute; top: 0px; right: 0px; height: 400px; width:400px; font-family: monospace; overflow-y:auto; }
+.debug { border: 1px dotted darkgreen; position: absolute; top: 0px; right: 0px; height: 400px; width:400px; font-family: monospace; overflow-y:auto; z-index:100; }
 .debug .error { color: #D91E18; }
 .debug .success { color: #2ECC71; }
-.debug .info { color: #C5EFF7; }    
-.update_log { border: 1px solid #52B3D9; position: absolute; bottom: 0px; right: 0px; height: 300px; width:400px; overflow-y: auto; }
-.modify { position: absolute; height: 100px; width: 300px; bottom: 0px; left: 0px; background: rgba(255,255,255, .4); color: #222; border: 1px solid #fff; }
+.debug .info { color: #C5EFF7; }
+.update_log { border: 1px dotted #52B3D9; position: absolute; bottom: 0px; right: 0px; height: 300px; width:400px; overflow-y: auto; z-index:100; }
+.modify { position: absolute; height: 100px; width: 300px; bottom: 0px; left: 0px; background: rgba(255,255,255, .4); color: #222; border: 1px solid #fff; z-index:100; }
 .modify input { padding: 5px 0px; display: inline-block; width: 100%; border: 0px; margin: 0px; float: left; }

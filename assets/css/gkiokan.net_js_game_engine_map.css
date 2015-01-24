@@ -1,0 +1,29 @@
+
+
+.level_0_background {
+  width:4000px;
+  height:100%;
+  position:absolute;
+  top:0px; left:-50px; bottom:0px;
+  background-position:center center;
+  background-repeat:no-repeat;
+  background-image:url('http://svr.gkiokan.net/cdn/level_background/level_0_4000_1080.jpg');
+  background-color: rgba(20,20,0,.4);
+  background-size: cover;
+}
+
+.floor_0_background {
+  width:110vw; height:235px;
+  position:absolute;
+  left:0px; right:0px; bottom:0px;
+  background: darkgray;
+  background-size:cover;
+}
+
+.floor_1_background {
+  width:150%; height:235px;
+  position:fixed;
+  left:0px; right:0px; bottom:0px;
+  background: url('http://svr.gkiokan.net/cdn/level_background/floor_1_2000_235.jpg') center center no-repeat darkgray;
+  background-size: cover;
+}
